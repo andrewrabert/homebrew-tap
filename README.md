@@ -1,7 +1,18 @@
-# homebrew-tap
+# andrewrabert tap
 
-Homebrew formulae for [andrewrabert](https://github.com/andrewrabert) projects.
+## How do I install these formulae?
 
-```sh
-brew install andrewrabert/tap/aweber
+`brew install andrewrabert/tap/aweber`
+
+Or `brew tap andrewrabert/tap` and then `brew install aweber`.
+
+Or, in a `brew bundle` `Brewfile`:
+
+```ruby
+tap "andrewrabert/tap"
+brew "aweber"
 ```
+
+## Documentation
+
+`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).

@@ -1,7 +1,6 @@
 class Aweber < Formula
   desc "Command-line interface for the AWeber API"
   homepage "https://github.com/andrewrabert/aweber-cli"
-  version "0.7.0"
   license "MIT"
 
   on_macos do
@@ -31,6 +30,8 @@ class Aweber < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/aweber --version")
+    ENV["AWEBER_CREDENTIALS_FILE"] = testpath/"credentials.json"
+    output = shell_output("#{bin}/aweber lists list 2>&1", 1)
+    assert_match "not logged in", output
   end
 end
